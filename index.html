@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrap wrap-sm">
+    <div class="header">
+      <h1>SignUp</h1>
+    </div>
+    <div class="from">
+      <form id="signup">
+        <div class="input-wrap">
+          <label>姓名</label>
+          <input data-rule='maxlength:5|minlength:2'
+          type="text"
+          name="name"
+          class="input-control">
+          <div id="name-input-error" class="input-error">姓名格式有误，不能超过五个字符且不能小于2个字符。</div>
+        </div>
+        <div class="input-wrap">
+          <label>年龄</label>
+          <input data-rule='min:18'
+          type="text"
+          name="age"
+          class="input-control">
+          <div id="age-input-error" class="input-error">年龄格式有误，年龄不能小于18岁。</div>
+        </div>
+        <div class="input-wrap">
+          <label>用户名</label>
+          <input data-rule='pattern:"^[a-zA-Z0-9]*$"|maxlength:18|minlength:4'
+          type="text"
+          name="username"
+          class="input-control">
+          <div id="username-input-error" class="input-error">用户名格式有误，长度应该小于18大于4且不得出现汉字。</div>
+        </div>
+        <div class="input-wrap">
+          <label>密码</label>
+          <input data-rule='maxlength:64|minlength:6'
+          type="password"
+          name="password"
+          class="input-control">
+          <div id="password-input-error" class="input-error">密码格式有误，不得小于6个字符。</div>
+        </div>
+        <div class="input-wrap">
+          <label>自我介绍</label>
+          <input data-rule='required:false|maxlength:1024'
+          type="text"
+          name="intro"
+          class="input-control">
+          <div id="intro-input-error" class="input-error">自我介绍格式有误，不能超过1024个字符。</div>
+        </div>
+        <button class="button-control" type="submit">注册</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+  <script src="js/validator.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
